@@ -10,14 +10,14 @@ public class MySQLConnection {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (final ClassNotFoundException e1) {
-			System.out.println();
+			System.out.println("ClassNotFoundException: unable to find a class for \"com.mysql.cj.jdbc.Driver\".");
 			e1.printStackTrace();
 		}
 		Connection con = null;
 		try {
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/IntroSQLandJDBC", "user", "changeIt");
 		} catch (final SQLException e) {
-			System.out.println();
+			System.out.println("SQLException: unable to establish connection to database.");
 			e.printStackTrace();
 		}
 		return con;
